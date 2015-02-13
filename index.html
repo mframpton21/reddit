@@ -23,9 +23,10 @@
               <i>{{post.timestamp | date : format : timezone}}</i>
               <p>{{post.body}}</p>
               <i>{{post.author}}</i>
-<!--               <p>Karma: {{post.karma}}</p>
-              <span ng-click="vote(post.id, 'up')" class="glyphicon glyphicon-thumbs-up"></span>
-              <span ng-click="vote(post.id, 'down')" class="glyphicon glyphicon-thumbs-down"></span>
+<!---->              
+              <p>Karma: {{post.karma}}</p>
+              <span ng-click="vote(post, 'up')" class="glyphicon glyphicon-thumbs-up"></span>
+              <span ng-click="vote(post, 'down')" class="glyphicon glyphicon-thumbs-down"></span>
               <hr>
               <form ng-submit="submitComment(post.id, post.commentForm)">
                 <div class="form-group">
@@ -40,7 +41,8 @@
                 <hr>
               </div>
             </div>
- -->          </div>
+<!----> 
+          </div>
           <div class="panel-footer">
             This is the panel footer.
           </div>
@@ -55,22 +57,22 @@
             <form class="form" ng-submit="addPost()">
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" placeholder="title">
+                <input type="text" class="form-control" placeholder="title" ng-model="newPost.title">
               </div>
               <div class="form-group">
                 <label>Body</label>
-                <textarea type="text" class="form-control" placeholder="body"></textarea>
+                <textarea type="text" class="form-control" placeholder="body" ng-model="newPost.body"></textarea>
               </div>
               <div class="form-group">
                 <label>Author</label>
-                <input type="text" class="form-control" placeholder="author">
+                <input type="text" class="form-control" placeholder="author" ng-model="newPost.author">
               </div>
             </form>
           </div>
           <div class="panel-footer">
             <div class="row">
               <div class="col-md-6">
-                <button class="btn btn-info btn-block">Post!</button>
+                <button class="btn btn-info btn-block" ng-click="addPost()">Post!</button>
               </div>
             </div>
           </div>
@@ -84,9 +86,9 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
-<script src="app.js"></script>
-<script src="controller.js"></script>
-<script src="service.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/service.js"></script>
 </body>
 </html>
 
